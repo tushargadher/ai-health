@@ -1,0 +1,89 @@
+/* General Styles */
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1f2937, #374151);
+}
+
+.registration-box {
+  background: #fff;
+  padding: 30px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Heading */
+.registration-box h2 {
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Input Fields */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #f3f4f6;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.input-group .input-icon {
+  color: #6b7280;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Register Button */
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  background: #1f2937;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-btn:hover {
+  background: #374151;
+}
+
+/* Login Link */
+.registration-box p {
+  margin-top: 10px;
+  color: #6b7280;
+}
+
+.registration-box p a {
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registration-box p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .registration-box {
+    width: 90%;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,130 @@
+/* General Layout */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background: #efefef;
+  color: #373737;
+  padding: 20px;
+}
+
+/* Title */
+.chat-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Chat History */
+.chat-history {
+  width: 90%;
+  max-width: 600px;
+  height: 60vh;
+  overflow-y: auto;
+  background: #d0d6df;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message Box */
+.message-box {
+  max-width: 80%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  word-wrap: break-word;
+  font-size: 1rem;
+}
+
+/* User Message */
+.message-box.user {
+  background: #2165f93b;
+  align-self: flex-end;
+  text-align: right;
+}
+
+/* AI Response */
+.message-box.bot {
+  background: #c5c5c5;
+  align-self: flex-start;
+}
+
+/* System Messages */
+.message-box.system {
+  background: #d97706;
+  align-self: center;
+  text-align: center;
+}
+
+/* Loading Animation */
+.loading {
+  font-size: 1rem;
+  color: #d1d5db;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Input Area */
+.chat-input-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 90%;
+  max-width: 600px;
+  margin-top: 10px;
+}
+
+/* Input Field */
+.chat-input-area input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.clear-btn, .send-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.clear-btn:hover {
+  background: #1e40af;
+}
+
+.send-btn:hover {
+  background: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .chat-title {
+    font-size: 1.8rem;
+  }
+
+  .chat-history {
+    height: 50vh;
+  }
+
+  .chat-input-area {
+    flex-direction: column;
+  }
+
+  .chat-input-area input {
+    width: 100%;
+  }
+
+  .clear-btn, .send-btn {
+    width: 100%;
+  }
+}

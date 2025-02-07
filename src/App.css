@@ -1,0 +1,119 @@
+/* src/components/home.css */
+.chat-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.chat-history {
+  min-height: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.message {
+  margin: 0.5rem 0;
+}
+
+.message.user {
+  text-align: right;
+  color: #333;
+}
+
+.message.bot {
+  text-align: left;
+  color: #0066cc;
+}
+
+.loading {
+  font-style: italic;
+  color: #999;
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-input-area input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.chat-input-area button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #0066cc;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* login css */
+
+
+/* registraction page css */
+
+
+/* navbar css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 15px 30px;
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.logout-btn:hover {
+  background-color: darkred;
+}
+
