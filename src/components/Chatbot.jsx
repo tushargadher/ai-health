@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef ,useMemo } from "react";
 import { IoIosSend } from "react-icons/io";
 import ReactMarkdown from "react-markdown";
 import { generateContent } from "./Model";
@@ -10,28 +10,31 @@ const Chatbot = () => {
   const searchParams = new URLSearchParams(location.search);
   const initialTitle = searchParams.get("title") || "AI Chatbot Assistance";
 
-  const [chatTitle, setChatTitle] = useState(initialTitle);
+  const [chatTitle] = useState(initialTitle);
   const [userInput, setUserInput] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const chatEndRef = useRef(null);
 
   // Default prompts based on selected feature
-  const defaultPrompts = {
-    "AI-Powered Workout Recommendations": "Suggest a workout plan for beginners.",
-    "Meditation & Self-Help Suggestions": "Recommend mindfulness exercises for stress relief.",
-    "AI Chatbot Assistance": "How can I assist you today?",
-    "Symptoms Checker": "What are common symptoms of the flu?",
-    "Personalized Fitness Plans": "Create a personalized fitness plan for weight loss.",
-    "Daily Health & Wellness Tips": "Give me a daily health tip.",
-    "Goal-Based Exercise Plans": "Suggest an exercise plan for muscle gain.",
-    "Diet & Nutrition Guidance": "What are some healthy foods for weight loss?",
-  };
+  const defaultPrompts = useMemo(
+    () => ({
+      "AI-Powered Workout Recommendations": "Suggest a workout plan for beginners.",
+      "Meditation & Self-Help Suggestions": "Recommend mindfulness exercises for stress relief.",
+      "AI Chatbot Assistance": "How can I assist you today?",
+      "Symptoms Checker": "What are common symptoms of the flu?",
+      "Personalized Fitness Plans": "Create a personalized fitness plan for weight loss.",
+      "Daily Health & Wellness Tips": "Give me a daily health tip.",
+      "Goal-Based Exercise Plans": "Suggest an exercise plan for muscle gain.",
+      "Diet & Nutrition Guidance": "What are some healthy foods for weight loss?",
+    }),
+    []
+  );
 
   // Set default user input prompt
   useEffect(() => {
     setUserInput(defaultPrompts[chatTitle] || "");
-  }, [chatTitle]);
+  }, [chatTitle, defaultPrompts]);
 
   // Scroll to bottom when new messages arrive
   useEffect(() => {
