@@ -1,71 +1,75 @@
-/* General Layout */
+/* Background Styling */
 .home-container {
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/003/462/493/small_2x/abstract-futuristic-face-concept-artificial-intelligence-background-free-vector.jpg") no-repeat center center/cover;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: #efefef;
-  color: #111111;
   text-align: center;
-  padding: 20px;
+  position: relative;
 }
 
-/* Title & Subtitle */
-.home-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+/* Blur Effect */
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
+/* Text Styling */
 .home-subtitle {
-  font-size: 1.2rem;
-  color: #1c1c1c;
-  margin-bottom: 20px;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Feature Grid */
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  width: 80%;
-  max-width: 900px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
-/* Feature Box */
+/* Feature Box Styling */
 .feature-box {
-  background: #374151;
-  color: #fff;
-  border: none;
-  padding: 15px;
-  font-size: 1rem;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .feature-box:hover {
-  background: #4b5563;
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.4);
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .home-title {
-    font-size: 2rem;
-  }
-
-  .home-subtitle {
-    font-size: 1rem;
-  }
-
-  .feature-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  .feature-box {
-    padding: 12px;
-    font-size: 0.9rem;
-  }
+/* Icon Styling */
+.feature-icon {
+  font-size: 1.8rem;
 }

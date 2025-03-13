@@ -1,16 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FaDumbbell, FaBrain, FaHeartbeat, FaRobot, FaRunning, FaClipboardList, FaChartLine, FaUtensils } from "react-icons/fa";
 import "./../css/home.css";
 
 const features = [
-  "AI-Powered Workout Recommendations",
-  "Meditation & Self-Help Suggestions",
-  "Symptoms Checker",
-  "AI Chatbot Assistance",
-  "Personalized Fitness Plans",
-  "Daily Health & Wellness Tips",
-  "Goal-Based Exercise Plans",
-  "Diet & Nutrition Guidance",
+  { title: "AI-Powered Workout Recommendations", icon: <FaDumbbell /> },
+  { title: "Meditation & Self-Help Suggestions", icon: <FaBrain /> },
+  { title: "Symptoms Checker", icon: <FaHeartbeat /> },
+  { title: "AI Chatbot Assistance", icon: <FaRobot /> },
+  { title: "Personalized Fitness Plans", icon: <FaRunning /> },
+  { title: "Daily Health & Wellness Tips", icon: <FaClipboardList /> },
+  { title: "Goal-Based Exercise Plans", icon: <FaChartLine /> },
+  { title: "Diet & Nutrition Guidance", icon: <FaUtensils /> },  // ✅ FIXED: Replaced FaBowlRice
 ];
 
 const Home = () => {
@@ -26,8 +27,9 @@ const Home = () => {
 
       <div className="feature-grid">
         {features.map((feature, index) => (
-          <button key={index} className="feature-box" onClick={() => handleFeatureClick(feature)}>
-            {feature}
+          <button key={index} className="feature-box" onClick={() => handleFeatureClick(feature.title)}>
+            <span className="feature-icon">{feature.icon}</span>
+            {feature.title}
           </button>
         ))}
       </div>
